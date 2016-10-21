@@ -16,12 +16,14 @@ if (!is_null($events['events'])) {
 			{
 				$text = "สวัสดีครับเจ้านาย";
 			}
-			elseif($text_in=='เปิด1')
+			elseif($text_in=='เปิด')
 			{
+				echo  $_POST['https://api.thingspeak.com/talkbacks/10962/commands?api_key=WFN45I92A9NN3S27&command_string=on&position=1'];
 				$text = "เปิด1แล้วครับเจ้านาย";
 			}
-			elseif($text_in=='ปิด1')
+			elseif($text_in=='ปิด')
 			{
+				echo  $_POST['https://api.thingspeak.com/talkbacks/10962/commands?api_key=WFN45I92A9NN3S27&command_string=off&position=1'];
 				$text = "ปิด1แล้วครับเจ้านาย";
 			}
 			else
