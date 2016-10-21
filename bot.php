@@ -11,8 +11,24 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			//$text = $event['message']['text'];
-			$text = "สวัสดีเจ้านาย";
+			$text_in = $event['message']['text'];
+			if($text_in=='สวัสดี')
+			{
+				$text = "สวัสดีครับเจ้านาย";
+			}
+			elseif($text_in=='เปิด1')
+			{
+				$text = "เปิด1แล้วครับเจ้านาย";
+			}
+			elseif($text_in=='ปิด1')
+			{
+				$text = "ปิด1แล้วครับเจ้านาย";
+			}
+			else
+			{
+				$text = "ไม่รู้จักคำสั่งครับ";	
+			}
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
