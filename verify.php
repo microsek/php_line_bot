@@ -1,3 +1,2 @@
 <?php
-$ curl -XGET -u "microsekmcu@gmail.com:pass2526" https://api.cloudmqtt.com/acl
-[{"topic":"test/users/topic","read":true,"write":true,"username":"topic"}]
+echo  $_POST['https://api.thingspeak.com/talkbacks/10962/commands?api_key=WFN45I92A9NN3S27&command_string=on&position=1'];
