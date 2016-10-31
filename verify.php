@@ -14,4 +14,4 @@ $url = 'https://api.thingspeak.com/talkbacks/10962/commands.json?';
 				if ($result === FALSE) { /* Handle error */ }
 					var_dump($result);
 
-echo $result;
+
