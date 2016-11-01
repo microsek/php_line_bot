@@ -58,8 +58,10 @@ if (!is_null($events['events'])) {
 				$content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/commands.json?api_key=WFN45I92A9NN3S27');
 				$events = json_decode($content, true);
 				foreach ($events as $result) {
-   					$text=$text+","+$result["command_string"];
+   					$status=$result["command_string"];
+					$status=$status.",";
  				}
+				$text = $status;
 			}
 			else
 			{
