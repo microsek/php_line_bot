@@ -4,4 +4,7 @@ $content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/command
 // Parse JSON
 $events = json_decode($content, true);
 print $events;//->{'command_string'};
+foreach ($events as $result) {
+   echo $result["command_string"];
+}
 
