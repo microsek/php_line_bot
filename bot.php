@@ -16,10 +16,10 @@ if (!is_null($events['events'])) {
 			{
 				$text = "สวัสดีครับเจ้านาย";
 			}
-			elseif($text_in=='เปิด')
+			elseif($text_in=='เปิดLED1')
 			{
-				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2920959.json?api_key=WFN45I92A9NN3S27';
-				$data = array('command_string' => 'ON', 'position' => '1');
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2977631.json?api_key=WFN45I92A9NN3S27';
+				$data = array('command_string' => 'LED1=ON', 'position' => '2');
 
 				$options = array(
     					'http' => array(
@@ -32,12 +32,12 @@ if (!is_null($events['events'])) {
 				$result = file_get_contents($url, false, $context);
 				if ($result === FALSE) { /* Handle error */ }
 					var_dump($result);
-				$text = "เปิดแล้วครับเจ้านาย";
+				$text = "เปิดLED1แล้วครับเจ้านาย";
 			}
-			elseif($text_in=='ปิด')
+			elseif($text_in=='ปิดLED1')
 			{
-				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2920959.json?api_key=WFN45I92A9NN3S27';
-				$data = array('command_string' => 'OFF', 'position' => '1');
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2977631.json?api_key=WFN45I92A9NN3S27';
+				$data = array('command_string' => 'LED1=OFF', 'position' => '1');
 
 				$options = array(
     					'http' => array(
@@ -50,7 +50,44 @@ if (!is_null($events['events'])) {
 				$result = file_get_contents($url, false, $context);
 				if ($result === FALSE) { /* Handle error */ }
 					var_dump($result);
-				$text = "ปิดแล้วครับเจ้านาย";
+				$text = "ปิดLED1แล้วครับเจ้านาย";
+				
+			}
+			elseif($text_in=='เปิดLED2')
+			{
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2920959.json?api_key=WFN45I92A9NN3S27';
+				$data = array('command_string' => 'LED2=ON', 'position' => '1');
+
+				$options = array(
+    					'http' => array(
+        				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        				'method'  => 'PUT',
+        				'content' => http_build_query($data)
+    						)
+				);
+				$context  = stream_context_create($options);
+				$result = file_get_contents($url, false, $context);
+				if ($result === FALSE) { /* Handle error */ }
+					var_dump($result);
+				$text = "เปิดLED2แล้วครับเจ้านาย";
+			}
+			elseif($text_in=='ปิดLED2')
+			{
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2920959.json?api_key=WFN45I92A9NN3S27';
+				$data = array('command_string' => 'LED2=OFF', 'position' => '1');
+
+				$options = array(
+    					'http' => array(
+        				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        				'method'  => 'PUT',
+        				'content' => http_build_query($data)
+    						)
+				);
+				$context  = stream_context_create($options);
+				$result = file_get_contents($url, false, $context);
+				if ($result === FALSE) { /* Handle error */ }
+					var_dump($result);
+				$text = "ปิดLED2แล้วครับเจ้านาย";
 				
 			}
 			elseif($text_in=='สถานะ')
