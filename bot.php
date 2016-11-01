@@ -53,8 +53,17 @@ if (!is_null($events['events'])) {
 				$text = "ปิดแล้วครับเจ้านาย";
 				
 			}
+			elseif($text_in=='สะถานะ')
+			{
+				$content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/commands.json?api_key=WFN45I92A9NN3S27');
+				$events = json_decode($content, true);
+				foreach ($events as $result) {
+   					$text=$text+","+$result["command_string"];
+ 				}
+			}
 			else
 			{
+				
 				$text = "ไม่รู้จักคำสั่งครับ";	
 			}
 			
