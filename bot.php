@@ -92,10 +92,10 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='สถานะ')
 			{
-				$content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/commands.json?api_key=WFN45I92A9NN3S27');
+				$content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/commands/2977631.json?api_key=WFN45I92A9NN3S27');
 				$events = json_decode($content, true);
 				foreach ($events as $result) {
-   					$status=$result["command_string"].",".$status;
+   					$status=$result["command_string"];
 				}
 				$text = $status;
 			}
