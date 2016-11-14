@@ -14,7 +14,7 @@ if (!is_null($events['events'])) {
 			$text_in = $event['message']['text'];
 			if($text_in=='สวัสดี')
 			{
-				/*"type": "template",
+				"type": "template",
   				"altText": "this is a confirm template",
   				"template": {
      			 	"type": "confirm",
@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
             					"text": "no"
           				}
       				]		
-  				}*/
+  				}
 
 				$text = "สวัสดีครับเจ้านาย";
 			}
