@@ -17,8 +17,8 @@ if (!is_null($events['events'])) {
 				$messages = 
 				[
 					'type'=> 'image',
-   					'originalContentUrl'=> "http://cz.lnwfile.com/ltojze.png",
-    					'previewImageUrl'=> "http://cz.lnwfile.com/ltojze.png"
+   					'originalContentUrl'=> "http://3.bp.blogspot.com/-dFXdHJ7-f-4/UncZCR64fwI/AAAAAAAAAC8/3vW7yMal5OQ/s1600/166997LANDChiang-mai22.jpg",
+    					'previewImageUrl'=> "http://3.bp.blogspot.com/-dFXdHJ7-f-4/UncZCR64fwI/AAAAAAAAAC8/3vW7yMal5OQ/s1600/166997LANDChiang-mai22.jpg"
 			        ];
 			}
 			elseif($text_in=='เปิดLED1')
