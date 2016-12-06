@@ -14,15 +14,12 @@ if (!is_null($events['events'])) {
 			$text_in = $event['message']['text'];
 			if($text_in=='สวัสดี')
 			{
-				$messages = [
-				//'type' => 'text',
-				//text' => "Hello, world"
-				 'type'=> 'sticker',
- 				 'packageId'=> "1",
-				 'stickerId'=> "10"
-				
-				
-			];
+				$messages = 
+				[
+					'type'=> 'image',
+   					'originalContentUrl'=> "http://cz.lnwfile.com/ltojze.png",
+    					'previewImageUrl'=> "http://cz.lnwfile.com/ltojze.png"
+			        ];
 			}
 			elseif($text_in=='เปิดLED1')
 			{
@@ -111,7 +108,12 @@ if (!is_null($events['events'])) {
 			else
 			{
 				
-				$text = "ไม่รู้จักคำสั่งครับ";	
+				$messages = 
+				[
+				 'type'=> 'sticker',
+ 				 'packageId'=> "2",
+				 'stickerId'=> "149"				
+			        ];	
 			}
 			
 			// Get replyToken
