@@ -112,21 +112,15 @@ if (!is_null($events['events'])) {
 			$messages = [
 				//'type' => 'text',
 				//text' => "Hello, world"
-				 'type'=> 'sticker',
- 				 'packageId'=> "1",
-				 'stickerId'=> "1"
-			];
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				// 'type'=> 'sticker',
+ 				// 'packageId'=> "1",
+				// 'stickerId'=> "1"
 				
 				'type'=> 'template',
-  				'altText'=> 'this is a confirm template',
+  				'altText'=> "this is a confirm template",
   				'template'=> {
       					'type'=> 'confirm',
-      					'text'=> 'Are you sure?',
+      					'text'=> "Are you sure?",
       					'actions'=> [
           				{
             					'type'=> 'message',
@@ -140,6 +134,14 @@ if (!is_null($events['events'])) {
           				}
       					]
   				}
+			];
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+				
+				
 				
 			];
 			$post = json_encode($data);
