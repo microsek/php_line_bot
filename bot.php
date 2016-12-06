@@ -125,12 +125,12 @@ if (!is_null($events['events'])) {
           				{
             					'type'=> 'message',
             					'label'=> 'Yes',
-            					'text'=> 'yes'
+            					'text'=> "yes"
           				},
           				{
             					'type'=> 'message',
             					'label'=> 'No',
-            					'text'=> 'no'
+            					'text'=> "no"
           				}
       					]
   				}
