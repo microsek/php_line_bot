@@ -121,6 +121,26 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
+				
+				'type'=> 'template',
+  				'altText'=> 'this is a confirm template',
+  				'template'=> {
+      					'type'=> 'confirm',
+      					'text'=> 'Are you sure?',
+      					'actions'=> [
+          				{
+            					'type'=> 'message',
+            					'label'=> 'Yes',
+            					'text'=> 'yes'
+          				},
+          				{
+            					'type'=> 'message',
+            					'label'=> 'No',
+            					'text'=> 'no'
+          				}
+      					]
+  				}
+				
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
