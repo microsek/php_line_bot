@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='เปิดLED1')
 			{
-				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2977631.json?api_key=WFN45I92A9NN3S27';
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/4117441.json?api_key=WFN45I92A9NN3S27';
 				$data = array('command_string' => 'LED1=ON', 'position' => '2');
 
 				$options = array(
@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='ปิดLED1')
 			{
-				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2977631.json?api_key=WFN45I92A9NN3S27';
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/4117441.json?api_key=WFN45I92A9NN3S27';
 				$data = array('command_string' => 'LED1=OFF', 'position' => '1');
 
 				$options = array(
@@ -60,7 +60,7 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='เปิดLED2')
 			{
-				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2920959.json?api_key=WFN45I92A9NN3S27';
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/4117582.json?api_key=WFN45I92A9NN3S27';
 				$data = array('command_string' => 'LED2=ON', 'position' => '1');
 
 				$options = array(
@@ -78,7 +78,7 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='ปิดLED2')
 			{
-				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/2920959.json?api_key=WFN45I92A9NN3S27';
+				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/4117582.json?api_key=WFN45I92A9NN3S27';
 				$data = array('command_string' => 'LED2=OFF', 'position' => '1');
 
 				$options = array(
@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='สถานะ')
 			{
-				$content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/commands/2977631.json?api_key=WFN45I92A9NN3S27');
+				$content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/commands/4117582.json?api_key=WFN45I92A9NN3S27');
 				$content="[".$content."]";		
 				$events = json_decode($content, true);
 				foreach ($events as $result) {
