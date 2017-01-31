@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
 				$result = file_get_contents($url, false, $context);
 				if ($result === FALSE) { /* Handle error */ }
 					var_dump($result);
-				$text = "เปิดLED1แล้วครับเจ้านาย";
+				$messages = "เปิดLED1แล้วครับเจ้านาย";
 			}
 			elseif($text_in=='ปิดLED1')
 			{
@@ -55,7 +55,7 @@ if (!is_null($events['events'])) {
 				$result = file_get_contents($url, false, $context);
 				if ($result === FALSE) { /* Handle error */ }
 					var_dump($result);
-				$text = "ปิดLED1แล้วครับเจ้านาย";
+				$messages = "ปิดLED1แล้วครับเจ้านาย";
 				
 			}
 			elseif($text_in=='เปิดLED2')
@@ -74,7 +74,7 @@ if (!is_null($events['events'])) {
 				$result = file_get_contents($url, false, $context);
 				if ($result === FALSE) { /* Handle error */ }
 					var_dump($result);
-				$text = "เปิดLED2แล้วครับเจ้านาย";
+				$messages = "เปิดLED2แล้วครับเจ้านาย";
 			}
 			elseif($text_in=='ปิดLED2')
 			{
@@ -92,7 +92,7 @@ if (!is_null($events['events'])) {
 				$result = file_get_contents($url, false, $context);
 				if ($result === FALSE) { /* Handle error */ }
 					var_dump($result);
-				$text = "ปิดLED2แล้วครับเจ้านาย";
+				$messages = "ปิดLED2แล้วครับเจ้านาย";
 				
 			}
 			elseif($text_in=='สถานะ')
@@ -103,7 +103,7 @@ if (!is_null($events['events'])) {
 				foreach ($events as $result) {
    					$status=$result["command_string"];
 				}
-				$text = $status;
+				$messages = $status;
 			}
 			else
 			{
