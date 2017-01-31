@@ -16,10 +16,10 @@ if (!is_null($events['events'])) {
 			{
 				$messages = 
 				[
-					'type'=> 'image',
-   					'originalContentUrl'=> "http://3.bp.blogspot.com/-dFXdHJ7-f-4/UncZCR64fwI/AAAAAAAAAC8/3vW7yMal5OQ/s1600/166997LANDChiang-mai22.jpg",
-    					'previewImageUrl'=> "http://3.bp.blogspot.com/-dFXdHJ7-f-4/UncZCR64fwI/AAAAAAAAAC8/3vW7yMal5OQ/s1600/166997LANDChiang-mai22.jpg"
-			        ];
+				 'type'=> 'sticker',
+ 				 'packageId'=> "2",
+				 'stickerId'=> "149"				
+			        ];	
 			}
 			elseif($text_in=='เปิดLED1')
 			{
@@ -42,7 +42,7 @@ if (!is_null($events['events'])) {
 			elseif($text_in=='ปิดLED1')
 			{
 				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/4117441.json?api_key=WFN45I92A9NN3S27';
-				$data = array('command_string' => 'LED1=OFF', 'position' => '1');
+				$data = array('command_string' => 'LED1=OFF', 'position' => '2');
 
 				$options = array(
     					'http' => array(
