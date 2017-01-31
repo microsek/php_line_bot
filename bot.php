@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 				[
 				 'type'=> 'sticker',
  				 'packageId'=> "2",
-				 'stickerId'=> "149"				
+				 'stickerId'=> "1"				
 			        ];	
 			}
 			elseif($text_in=='เปิดLED1')
@@ -111,7 +111,7 @@ if (!is_null($events['events'])) {
 				$messages = 
 				[
 				 'type'=> 'sticker',
- 				 'packageId'=> "50",
+ 				 'packageId'=> "2",
 				 'stickerId'=> "149"				
 			        ];	
 			}
