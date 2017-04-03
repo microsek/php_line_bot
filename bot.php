@@ -109,7 +109,7 @@ if (!is_null($events['events'])) {
 			{
 				
 				$messages = $text_in;
-	
+				echo $messages;
 			}
 			
 			// Get replyToken
@@ -140,4 +140,4 @@ if (!is_null($events['events'])) {
 	}
 }
 echo $result . "\r\n";
-echo $messages;
+
