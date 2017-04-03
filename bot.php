@@ -108,12 +108,8 @@ if (!is_null($events['events'])) {
 			else
 			{
 				
-				$messages = 
-				[
-				 'type'=> 'sticker',
- 				 'packageId'=> "2",
-				 'stickerId'=> "149"				
-			        ];	
+				$messages = $text_in;
+	
 			}
 			
 			// Get replyToken
