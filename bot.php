@@ -39,6 +39,41 @@ if (!is_null($events['events'])) {
 					var_dump($result);
 				$messages = "เปิดLED1แล้วครับเจ้านาย";
 			}
+			elseif($text_in=='เปิด')
+			{
+				$url = 'https://esp8266-temp.firebaseio-demo.com/users/jack/name.json';
+				$data = array('LED' => '1');
+
+				$options = array(
+    					'http' => array(
+        				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        				'method'  => 'PUT',
+        				'content' => http_build_query($data)
+    						)
+				);
+				$context  = stream_context_create($options);
+				$result = file_get_contents($url, false, $context);
+				if ($result === FALSE) { /* Handle error */ }
+					var_dump($result);
+				$messages = "update Firebase แล้วครับ";
+			}elseif($text_in=='ปิด')
+			{
+				$url = 'https://esp8266-temp.firebaseio-demo.com/users/jack/name.json';
+				$data = array('LED' => '0');
+
+				$options = array(
+    					'http' => array(
+        				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        				'method'  => 'PUT',
+        				'content' => http_build_query($data)
+    						)
+				);
+				$context  = stream_context_create($options);
+				$result = file_get_contents($url, false, $context);
+				if ($result === FALSE) { /* Handle error */ }
+					var_dump($result);
+				$messages = "update ปิด Firebase แล้วครับ";
+			}
 			elseif($text_in=='ปิดLED1')
 			{
 				$url = 'https://api.thingspeak.com/talkbacks/10962/commands/4117441.json?api_key=WFN45I92A9NN3S27';
