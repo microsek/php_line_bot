@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='เปิด')
 			{
-				$url = 'https://esp8266-temp.firebaseio-demo.com/users/jack/name.json';
+				$url = 'https://esp8266-temp.firebaseio.com/LED.json';
 				$data = array('LED' => '1');
 
 				$options = array(
@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 				$messages = "update Firebase แล้วครับ";
 			}elseif($text_in=='ปิด')
 			{
-				$url = 'https://esp8266-temp.firebaseio-demo.com/users/jack/name.json';
+				$url = 'https://esp8266-temp.firebaseio.com/LED.json';
 				$data = array('LED' => '0');
 
 				$options = array(
