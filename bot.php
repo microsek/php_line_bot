@@ -116,7 +116,7 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='สถานะ')
 			{
-				$json = file_get_contents('https://esp8266-temp.firebaseio.com/Lamp.jason');
+				$json = file_get_contents("https://esp8266-temp.firebaseio.com/Lamp.jason");
 				$array = json_decode($json);
 
 				$urlPoster=array();
