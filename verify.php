@@ -1,7 +1,7 @@
 
 <?php
 $url = 'https://esp8266-temp.firebaseio.com/LED.json';
-				$data = array('LED' => '1');
+				$data = array("LED" => 55);
 				$options = array(
     					'http' => array(
         				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
