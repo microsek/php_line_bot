@@ -2,10 +2,10 @@
 <?php
 // Constants
 $FIREBASE = "https://esp8266-temp.firebaseio.com/Lamp.json";
-$NODE_DELETE = "temperature.json";
-$NODE_GET = "temperature.json";
-$NODE_PATCH = ".json";
-$NODE_PUT = "temperature.json";
+$NODE_DELETE = "Lamp.json";
+$NODE_GET = "Lamp.json";
+$NODE_PATCH = "Lamp.json";
+$NODE_PUT = "Lamp.json";
 // Data for PUT
 // Node replaced
 $data = 32;
