@@ -1,6 +1,6 @@
 <?php
 	$Node=$_GET["node"];
-	$cmd=$_GET["cmd"];
+	$cmd=$_GET['cmd'];
 	echo $Node."<br>";
 	echo $cmd."<br>";
         $FIREBASE = "https://esp8266-temp.firebaseio.com/";
