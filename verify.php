@@ -1,6 +1,8 @@
 <?php
-    $node=$_POST=["node"];
-    $cmd=$_POST=["cmd"];
+   // $node=$_POST=["node"];
+   // $cmd=$_POST=["cmd"];
+    $node='LED1';
+    $cmd=0;
     echo $node;
     echo $cmd;
     $FIREBASE = "https://esp8266-temp.firebaseio.com/";
