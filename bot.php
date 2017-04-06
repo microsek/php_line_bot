@@ -116,16 +116,17 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='สถานะ')
 			{
-				$json = file_get_contents("https://esp8266-temp.firebaseio.com/Lamp.jason");
-				$array = json_decode($json);
-
-				$urlPoster=array();
-				//foreach ($array as $value) { 
-    				//	$urlPoster[]=$value->urlPoster;
-				//}
+				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
+				$NODE_GET = "Lamp.json";
+				$curl = curl_init();
+			 	curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_GET );
+				curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+				$response = curl_exec( $curl );
+				curl_close( $curl );
+				//echo $response . "\n";
 				$messages = [
 					'type' => 'text',
-					'text' => $urlPoster
+					'text' => $response
 				];
 
 			}
