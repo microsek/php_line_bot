@@ -1,7 +1,7 @@
 
 <?php
 // Constants
-$FIREBASE = "https://esp8266-temp.firebaseio.com/Lamp.json";
+$FIREBASE = "https://esp8266-temp.firebaseio.com";
 $NODE_DELETE = "Lamp.json";
 $NODE_GET = "Lamp.json";
 $NODE_PATCH = "Lamp.json";
