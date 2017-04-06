@@ -1,10 +1,12 @@
 <?php
-	echo $_GET["node"]."<br>";
-	echo $_GET["cmd"]."<br>";
+	$Node=$_GET["node"];
+	$cmd=$_GET["cmd"];
+	echo $Node."<br>";
+	echo $cmd."<br>";
         $FIREBASE = "https://esp8266-temp.firebaseio.com/";
 	$NODE_PATCH = "Lamp.json";
 	$data = array(
-    		$_GET=["node"] => $_GET=["cmd"]
+    		$Node => $cmd
 	);
 	$json = json_encode( $data );
 	$curl = curl_init();
