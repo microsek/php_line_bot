@@ -12,6 +12,9 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text_in = $event['message']['text'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+			// Build message to reply back
 			if($text_in=='สวัสดี')
 			{
 				$messages = 
@@ -38,7 +41,10 @@ if (!is_null($events['events'])) {
 				$response = curl_exec( $curl );
 				curl_close( $curl );
 				echo $response . "\n";
-				$messages = "เปิดLED1แล้วครับเจ้านาย";
+				$messages = [
+					'type' => 'text',
+					'text' => "เปิดLED1แล้วครับเจ้านาย"
+				];
 			}
 			elseif($text_in=='เปิดLED2')
 			{
@@ -57,8 +63,12 @@ if (!is_null($events['events'])) {
 				$response = curl_exec( $curl );
 				curl_close( $curl );
 				echo $response . "\n";
-				$messages = "เปิดLED2แล้วครับเจ้านาย";
-			}elseif($text_in=='ปิดLED1')
+				$messages = [
+					'type' => 'text',
+					'text' => "เปิดLED2แล้วครับเจ้านาย"
+				];
+			}
+			elseif($text_in=='ปิดLED1')
 			{
 				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
 				$NODE_PATCH = "Lamp.json";
@@ -75,7 +85,10 @@ if (!is_null($events['events'])) {
 				$response = curl_exec( $curl );
 				curl_close( $curl );
 				echo $response . "\n";
-				$messages = "ปิดLED1แล้วครับเจ้านาย";
+				$messages = [
+					'type' => 'text',
+					'text' => "ปิดLED1แล้วครับเจ้านาย"
+				];
 
 			}
 			elseif($text_in=='ปิดLED2')
@@ -95,7 +108,10 @@ if (!is_null($events['events'])) {
 				$response = curl_exec( $curl );
 				curl_close( $curl );
 				echo $response . "\n";
-				$messages = "ปิดLED2แล้วครับเจ้านาย";
+				$messages = [
+					'type' => 'text',
+					'text' => "ปิดLED2แล้วครับเจ้านาย"
+				];
 				
 			}
 			elseif($text_in=='สถานะ')
@@ -107,18 +123,22 @@ if (!is_null($events['events'])) {
 				$response = curl_exec( $curl );
 				curl_close( $curl );
 				//echo $response . "\n";
-				$messages = $response;
+				$messages = [
+					'type' => 'text',
+					'text' => $response
+				];
 			}
 			else
 			{
 				
-				$messages = $text_in;
+				$messages = [
+					'type' => 'text',
+					'text' => $response
+				];
 
 			}
 			
-			// Get replyToken
-			$replyToken = $event['replyToken'];
-			// Build message to reply back
+			
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
