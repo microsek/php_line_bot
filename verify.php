@@ -1,20 +1,7 @@
 <?php
 // Constants
 $FIREBASE = "https://esp8266-temp.firebaseio.com/";
-$NODE_DELETE = "temperature.json";
-$NODE_GET = "temperature.json";
-$NODE_PATCH = "Lamp.json";
-$NODE_PUT = "temperature.json";
-// Data for PUT
-// Node replaced
-$data = 32;
-// Data for PATCH
-// Matching nodes updated
-$data = array(
-    "LED1" => 42
-);
-// JSON encoded
-$json = json_encode( $data );
+$NODE_GET = "Lamp.json";
 // Initialize cURL
 $curl = curl_init();
 // Create
@@ -22,11 +9,11 @@ $curl = curl_init();
 // curl_setopt( $curl, CURLOPT_CUSTOMREQUEST, "PUT" );
 // curl_setopt( $curl, CURLOPT_POSTFIELDS, 32 );
 // Read
-// curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_GET );
+ curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_GET );
 // Update
-curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_PATCH );
-curl_setopt( $curl, CURLOPT_CUSTOMREQUEST, "PATCH" );
-curl_setopt( $curl, CURLOPT_POSTFIELDS, $json );
+//curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_PATCH );
+//curl_setopt( $curl, CURLOPT_CUSTOMREQUEST, "PATCH" );
+//curl_setopt( $curl, CURLOPT_POSTFIELDS, $json );
 // Delete
 // curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_DELETE );
 // curl_setopt( $curl, CURLOPT_CUSTOMREQUEST, "DELETE" );
