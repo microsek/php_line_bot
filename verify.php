@@ -1,4 +1,6 @@
 <?php
+	echo $_GET["node"]."<br>";
+	echo $_GET["cmd"]."<br>";
     $FIREBASE = "https://esp8266-temp.firebaseio.com/";
 	$NODE_PATCH = "Lamp.json";
 	$data = array(
