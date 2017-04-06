@@ -100,19 +100,20 @@ if (!is_null($events['events'])) {
 			}
 			elseif($text_in=='สถานะ')
 			{
-				$content = file_get_contents('https://api.thingspeak.com/talkbacks/10962/commands/4117582.json?api_key=WFN45I92A9NN3S27');
-				$content="[".$content."]";		
-				$events = json_decode($content, true);
-				foreach ($events as $result) {
-   					$status=$result["command_string"];
-				}
-				$messages = $status;
+				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
+				$NODE_GET = "Lamp.json";
+				$curl = curl_init();
+				curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_GET );
+				$response = curl_exec( $curl );
+				curl_close( $curl );
+				//echo $response . "\n";
+				$messages = $response;
 			}
 			else
 			{
 				
 				$messages = $text_in;
-				echo $messages;
+
 			}
 			
 			// Get replyToken
