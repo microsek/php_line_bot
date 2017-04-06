@@ -1,14 +1,8 @@
 <?php
-   // $node=$_POST=["node"];
-   // $cmd=$_POST=["cmd"];
-    $node='LED1';
-    $cmd=0;
-    echo $node;
-    echo $cmd;
     $FIREBASE = "https://esp8266-temp.firebaseio.com/";
 	$NODE_PATCH = "Lamp.json";
 	$data = array(
-    		$node => $cmd
+    		$_POST=['node'] => $_POST=['cmd']
 	);
 	$json = json_encode( $data );
 	$curl = curl_init();
