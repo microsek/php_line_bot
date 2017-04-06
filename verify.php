@@ -1,15 +1,16 @@
 
 <?php
-$url = 'https://esp8266-temp.firebaseio.com/LED.json';
+
 $data = array("LED" => 55);
-$options = array(
-	'http' => array(
-	'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-	'method'  => 'PUT',
-	'content' => http_build_query($data))
-);
-$context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-if ($result === FALSE) { /* Handle error */ }
-	var_dump($result);
+        $ch = curl_init('https://esp8266-temp.firebaseio.com/LED.json');
+ 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
+ 
+        $response = curl_exec($ch);
+        if(!$response) {
+            return false;
+        }
+
 echo "OK";
