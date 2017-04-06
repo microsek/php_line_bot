@@ -120,9 +120,9 @@ if (!is_null($events['events'])) {
 				$array = json_decode($json);
 
 				$urlPoster=array();
-				foreach ($array as $value) { 
-    					$urlPoster[]=$value->urlPoster;
-				}
+				//foreach ($array as $value) { 
+    				//	$urlPoster[]=$value->urlPoster;
+				//}
 				$messages = [
 					'type' => 'text',
 					'text' => $urlPoster
