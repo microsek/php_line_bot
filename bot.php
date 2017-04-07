@@ -15,7 +15,11 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			if($text_in=='สวัสดี')
+			//***
+			$textin_cmd = explode(':', $text_in); //เอาข้อความมาแยก : ได้เป็น Array
+        
+			//***
+			if($textin_cmd[0]=='สวัสดี')
 			{
 				$messages = 
 				[
@@ -24,12 +28,12 @@ if (!is_null($events['events'])) {
 				 'stickerId'=> "1"				
 			        ];	
 			}
-			elseif($text_in=='เปิดLED1')
+			elseif($textin_cmd[0]=='เปิด')
 			{
 				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
 				$NODE_PATCH = "Lamp.json";
 				$data = array(
-    					"LED1" => 1
+    					$textin_cmd[1] => 1
 				);
 
 				$json = json_encode( $data );
@@ -43,15 +47,15 @@ if (!is_null($events['events'])) {
 				echo $response . "\n";
 				$messages = [
 					'type' => 'text',
-					'text' => "เปิดLED1แล้วครับเจ้านาย"
+					'text' => "เรียบร้อยแล้วครับเจ้านาย"
 				];
 			}
-			elseif($text_in=='เปิดLED2')
+			elseif($textin_cmd[0]=='ปิด')
 			{
 				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
 				$NODE_PATCH = "Lamp.json";
 				$data = array(
-    					"LED2" => 1
+    					$textin_cmd[1] => 0
 				);
 
 				$json = json_encode( $data );
@@ -65,56 +69,10 @@ if (!is_null($events['events'])) {
 				echo $response . "\n";
 				$messages = [
 					'type' => 'text',
-					'text' => "เปิดLED2แล้วครับเจ้านาย"
+					'text' => "เรียบร้อยแล้วครับเจ้านาย"
 				];
 			}
-			elseif($text_in=='ปิดLED1')
-			{
-				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
-				$NODE_PATCH = "Lamp.json";
-				$data = array(
-    					"LED1" => 0
-				);
-
-				$json = json_encode( $data );
-				$curl = curl_init();
-				curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_PATCH );
-				curl_setopt( $curl, CURLOPT_CUSTOMREQUEST, "PATCH" );
-				curl_setopt( $curl, CURLOPT_POSTFIELDS, $json );
-				curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-				$response = curl_exec( $curl );
-				curl_close( $curl );
-				echo $response . "\n";
-				$messages = [
-					'type' => 'text',
-					'text' => "ปิดLED1แล้วครับเจ้านาย"
-				];
-
-			}
-			elseif($text_in=='ปิดLED2')
-			{
-				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
-				$NODE_PATCH = "Lamp.json";
-				$data = array(
-    					"LED2" => 0
-				);
-
-				$json = json_encode( $data );
-				$curl = curl_init();
-				curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_PATCH );
-				curl_setopt( $curl, CURLOPT_CUSTOMREQUEST, "PATCH" );
-				curl_setopt( $curl, CURLOPT_POSTFIELDS, $json );
-				curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-				$response = curl_exec( $curl );
-				curl_close( $curl );
-				echo $response . "\n";
-				$messages = [
-					'type' => 'text',
-					'text' => "ปิดLED2แล้วครับเจ้านาย"
-				];
-				
-			}
-			elseif($text_in=='สถานะ')
+			elseif($textin_cmd[0]=='สถานะ')
 			{
 				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
 				$NODE_GET = "Lamp.json";
