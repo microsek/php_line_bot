@@ -126,5 +126,5 @@ $fff=[
 	'type'=> 'confirm',
  	'text'=> "Are you sure?"	
 ];
-echo $fff;
+echo $fff[0];
 ?>
