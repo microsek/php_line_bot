@@ -124,14 +124,8 @@ if (!is_null($events['events'])) {
 }
 $messages = 
 [
-	'type'=> 'confirm',
-	'text'=> "Are you sure?",
-	'actions'=> [
- 	//{
-		'type'=> "message",
- 		'label'=> "No",
-  		'text'=> "no"
- 	//}
-	]
+	'type'=> 'sticker',
+ 	'packageId'=> "2",
+	'stickerId'=> "149"	
  ];	
 echo $messages;
