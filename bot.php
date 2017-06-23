@@ -122,6 +122,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-$messages = "Sek";
-echo $messages;
+echo "ok";
 ?>
