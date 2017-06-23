@@ -82,18 +82,18 @@ if (!is_null($events['events'])) {
   					//'template'=> {
       					'type'=> 'confirm',
       					'text'=> "Are you sure?",
-      					'actions'=> [
+      					//'actions'=> [
           				//{
             				//	'type'=> "message",
             				//	'label'=> "Yes",
             				//	'text'=> "yes"
           				//},
-          				{
-            					'type'=> "message",
-            					'label'=> "No",
-            					'text'=> "no"
-          				}
-      					]
+          				//{
+            				//	'type'=> "message",
+            				//	'label'=> "No",
+            				//	'text'=> "no"
+          				//}
+      					//]
   					//}
 					//}			
 				//********************
