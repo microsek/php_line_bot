@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
   					//'type'=> "template",
   					//'altText'=> "this is a confirm template",
   					//'template'=> {
-      					'type'=> "confirm",
+      					'type'=> 'confirm',
       					'text'=> "Are you sure?",
       					'actions'=> [
           				{
