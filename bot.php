@@ -122,11 +122,6 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-$messages = 
-[
-	'type'=> 'sticker',
- 	'packageId'=> "2",
-	'stickerId'=> "149"	
- ];	
+$messages = "Sek";
 echo $messages;
 ?>
