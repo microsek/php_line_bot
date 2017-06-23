@@ -83,11 +83,11 @@ if (!is_null($events['events'])) {
       					'type'=> 'confirm',
       					'text'=> "Are you sure?",
       					'actions'=> [
-          				{
-            					'type'=> "message",
-            					'label'=> "Yes",
-            					'text'=> "yes"
-          				},
+          				//{
+            				//	'type'=> "message",
+            				//	'label'=> "Yes",
+            				//	'text'=> "yes"
+          				//},
           				{
             					'type'=> "message",
             					'label'=> "No",
