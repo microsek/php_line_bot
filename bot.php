@@ -77,9 +77,9 @@ if (!is_null($events['events'])) {
 				 //'stickerId'=> "149"	
 				//******************
 					//{
-  					'type'=> "template",
-  					'altText'=> "this is a confirm template",
-  					'template'=> {
+  					//'type'=> "template",
+  					//'altText'=> "this is a confirm template",
+  					//'template'=> {
       					'type'=> "confirm",
       					'text'=> "Are you sure?",
       					'actions'=> [
@@ -94,7 +94,7 @@ if (!is_null($events['events'])) {
             					'text'=> "no"
           				}
       					]
-  					}
+  					//}
 					//}			
 				//********************
 			        ];	
