@@ -122,5 +122,9 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "ok";
+$fff=[
+	'type'=> 'confirm',
+ 	'text'=> "Are you sure?"	
+];
+echo $fff;
 ?>
