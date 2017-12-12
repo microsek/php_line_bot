@@ -1,4 +1,5 @@
 <?php
+	echo "verify\n";
 	$Node=$_GET["node"];
 	$cmd=(int)$_GET['cmd'];
         $FIREBASE = "https://esp8266-temp.firebaseio.com/";
