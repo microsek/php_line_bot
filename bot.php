@@ -21,8 +21,11 @@ if (!is_null($events['events'])) {
 			if($textin_cmd[0]=='สวัสดี')
 			{
 				$messages = [
-					'type' => 'text',
-					'text' => "ออเจ้า"
+					{
+  					'type': "sticker",
+  					'packageId': "1",
+  					'stickerId': "2581"
+					}
 				];
 			}
 			elseif($textin_cmd[0]=='update')
