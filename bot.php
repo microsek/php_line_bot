@@ -21,11 +21,11 @@ if (!is_null($events['events'])) {
 			if($textin_cmd[0]=='สวัสดี')
 			{
 				$messages = [
-					{
+					
   					'type': "sticker",
   					'packageId': "1",
   					'stickerId': "2581"
-					}
+					
 				];
 			}
 			elseif($textin_cmd[0]=='update')
