@@ -23,9 +23,27 @@ if (!is_null($events['events'])) {
 			{
 				$messages = 
 				[
-				 'type'=> 'sticker',
- 				 'packageId'=> "2",
-				 'stickerId'=> "1"				
+				 {
+  					"type": "template",
+  					"altText": "this is a buttons template",
+  					"template": {
+   					"type": "buttons",
+    					"actions": [
+      					{
+        					"type": "message",
+        					"label": "หน้าบ้าน",
+        					"text": "sw1"
+      					},
+      					{
+        					"type": "message",
+        					"label": "หลังบ้าน",
+        					"text": "sw2"
+      					}
+    					],
+    					"title": "Microsek SW",
+    					"text": "สวิทช์"
+ 					 }
+				}				
 			        ];	
 			}
 			elseif($textin_cmd[0]=='update')
