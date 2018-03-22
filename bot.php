@@ -128,5 +128,5 @@ $fff=[
 	'type'=> 'confirm',
  	'text'=> "Are you sure?"	
 ];
-echo $fff[0];
+echo "sek";;
 ?>
