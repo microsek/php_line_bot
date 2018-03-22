@@ -16,19 +16,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			//***
-			$textin_cmd = explode(':', $text_in); //เอาข้อความมาแยก : ได้เป็น Array
-        
+			$textin_cmd = explode(':', $text_in); //เอาข้อความมาแยก : ได้เป็น Array        
 			//***
 			if($textin_cmd[0]=='สวัสดี')
 			{
-				$messages = 
-				[
-					{
-  						"type": "sticker",
-  						"packageId": "1",
-  						"stickerId": "2560"
-					}
-				]
+				$messages = [
+					'type' => 'text',
+					'text' => "ออเจ้า"
+				];
 			}
 			elseif($textin_cmd[0]=='update')
 			{
@@ -71,40 +66,12 @@ if (!is_null($events['events'])) {
 			}
 			else
 			{
-				
-				$messages = 
-				[
-				 //'type'=> 'sticker',
- 				 //'packageId'=> "2",
-				 //'stickerId'=> "149"	
-				//******************
-					//{
-  					//'type'=> "template",
-  					//'altText'=> "this is a confirm template",
-  					//'template'=> {
-      					'type'=> 'confirm',
-      					'text'=> "Are you sure?",
-      					//'actions'=> [
-          				//{
-            				//	'type'=> "message",
-            				//	'label'=> "Yes",
-            				//	'text'=> "yes"
-          				//},
-          				//{
-            				//	'type'=> "message",
-            				//	'label'=> "No",
-            				//	'text'=> "no"
-          				//}
-      					//]
-  					//}
-					//}			
-				//********************
-			        ];	
+				$messages = [
+					'type' => 'text',
+					'text' => "else"
+				];	
 
-			}
-			
-			
-			
+			}			
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
@@ -124,6 +91,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-
 echo "sek";
 ?>
