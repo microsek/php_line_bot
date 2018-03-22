@@ -33,7 +33,6 @@ if (!is_null($events['events'])) {
 				$data = array(
     					$textin_cmd[1] => $textin_cmd[2]
 				);
-
 				$json = json_encode( $data );
 				$curl = curl_init();
 				curl_setopt( $curl, CURLOPT_URL, $FIREBASE . $NODE_PATCH );
@@ -62,18 +61,32 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => $response
 				];
-
 			}
 			elseif($textin_cmd[0]=='1')
 			{
 				$messages = [
-				
-  "type"=> "sticker",
-  "packageId"=> "1",
-  "stickerId"=> "2581"
+        
+				"type"=> "template",
+      				"altText"=> "this is a buttons template",
+      				"template"=> {
+      				"type"=> "buttons",
+      				"actions": [
+      				{
+        				"type"=> "message",
+        				"label"=> "หน้าบ้าน",
+        				"text"=> "sw1"
+      				},
+      				{
+        				"type"=> "message",
+        				"label"=> "หลังบ้าน",
+        				"text"=> "sw2"
+      				}
+    				],
+    				"title"=> "Microsek SW",
+    				"text"=> "สวิทช์"
+    				}
 
 				];	
-
 			}			
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
