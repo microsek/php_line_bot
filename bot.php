@@ -68,9 +68,9 @@ if (!is_null($events['events'])) {
 			{
 				$messages = [
 				{
-  "type": "sticker",
-  "packageId": "1",
-  "stickerId": "2581"
+  "type"=> "sticker",
+  "packageId"=> "1",
+  "stickerId"=> "2581"
 }
 				];	
 
