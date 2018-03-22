@@ -68,24 +68,24 @@ if (!is_null($events['events'])) {
 			{
 				$messages = [
 				{
-  					"type": "template",
-  					"altText": "this is a buttons template",
-  					"template": {
-    					"type": "buttons",
-    					"actions": [
+  					"type"=> "template",
+  					"altText"=> "this is a buttons template",
+  					"template"=> {
+    					"type"=> "buttons",
+    					"actions"=> [
       					{
-        					"type": "message",
-        					"label": "หน้าบ้าน",
-        					"text": "sw1"
+        					"type"=> "message",
+        					"label"=> "หน้าบ้าน",
+        					"text"=> "sw1"
      			 		},
       					{
-        					"type": "message",
-        					"label": "หลังบ้าน",
-        					"text": "sw2"
+        					"type"=> "message",
+        					"label"=> "หลังบ้าน",
+        					"text"=> "sw2"
       					}
     					],
-    					"title": "Microsek SW",
-    					"text": "สวิทช์"
+    					"title"=> "Microsek SW",
+    					"text"=> "สวิทช์"
   					}
 				}
 				];	
