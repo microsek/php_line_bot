@@ -67,7 +67,7 @@ if (!is_null($events['events'])) {
 			elseif($textin_cmd[0]=='1')
 			{
 				$messages = [
-				{
+				//{
   					"type"=> "template",
   					"altText"=> "this is a buttons template",
   					"template"=> {
@@ -87,7 +87,7 @@ if (!is_null($events['events'])) {
     					"title"=> "Microsek SW",
     					"text"=> "สวิทช์"
   					}
-				}
+				//}
 				];	
 
 			}			
