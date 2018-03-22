@@ -67,8 +67,9 @@ if (!is_null($events['events'])) {
 			elseif($textin_cmd[0]=='1')
 			{
 				$messages = [
-					'type' => 'text',
-					'text' => "ออเจ้า1"
+					"type": "sticker",
+  					"packageId": "1",
+  					"stickerId": "2581"
 				];	
 
 			}			
