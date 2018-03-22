@@ -21,12 +21,10 @@ if (!is_null($events['events'])) {
 			if($textin_cmd[0]=='สวัสดี')
 			{
 				$messages = [
-					
-  					'type': "sticker",
-  					'packageId': "1",
-  					'stickerId': "2581"
-					
+					'type' => 'text',
+					'text' => "ออเจ้า"
 				];
+				
 			}
 			elseif($textin_cmd[0]=='update')
 			{
@@ -49,8 +47,7 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => "เรียบร้อยแล้วครับเจ้านาย"
 				];
-			}
-			
+			}			
 			elseif($textin_cmd[0]=='สถานะ')
 			{
 				$FIREBASE = "https://esp8266-temp.firebaseio.com/";
@@ -67,11 +64,11 @@ if (!is_null($events['events'])) {
 				];
 
 			}
-			else
+			elseif($textin_cmd[0]=='1')
 			{
 				$messages = [
 					'type' => 'text',
-					'text' => "else"
+					'text' => "ออเจ้า1"
 				];	
 
 			}			
